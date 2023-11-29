@@ -44,6 +44,13 @@ struct LEVELDB_EXPORT Range {
 // A DB is safe for concurrent access from multiple threads without
 // any external synchronization.
 class LEVELDB_EXPORT DB {
+/*
+  tip: DB是一个基类
+  1. static不能和virtual同时使用
+  2. 虚函数不代表其不能实现，只是为了让基类指针调用子类函数。
+  3. 纯虚函数不能实现，后面加 `=0` 即可声明
+  5. 构造函数不能是虚函数
+*/
  public:
   // Open the database with the specified "name".
   // Stores a pointer to a heap-allocated database in *dbptr and returns

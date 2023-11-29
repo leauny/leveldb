@@ -290,6 +290,11 @@ add_executable(leveldbutil
 )
 target_link_libraries(leveldbutil leveldb)
 
+add_executable(app
+        "app/main.cc"
+)
+target_link_libraries(app leveldb)
+
 if(LEVELDB_BUILD_TESTS)
   enable_testing()
 
